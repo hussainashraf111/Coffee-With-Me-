@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Header with Slide Menu</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    /* Background & Main Text */
+    --background: #E1F6F4;
+    --text: #3A281B;
+
+    /* Headings */
+    --heading: #243D38;
+    --heading-highlight: #245C52;
+
+    /* Subheadings */
+    --subheading: #5A4537;
+
+    /* Paragraphs */
+    --paragraph: #5F625B;
+    --small-text: #7A817A;
+
+    /* Highlights */
+    --highlight: #1F7567;
+    --highlight-bg: #C5EAE4;
+
+    /* Special Text & Links */
+    --special-text: #8A5A35;
+    --link: #276B60;
+    --link-hover: #17483F;
+
+    /* Borders */
+    --border: #B8DCD5;
+
+
+        /* Main Heading — Sharp & Bold */
+    --font-heading: 'Syne', sans-serif;
+
+    /* Subheadings — Geometric & Modern */
+    --font-subheading: 'Space Grotesk', sans-serif;
+
+    /* Paragraphs — Clean & Readable */
+    --font-paragraph: 'DM Sans', sans-serif;
+
+    /* Links & Navigation */
+    --font-link: 'Space Grotesk', sans-serif;
+
+} 
+
+
+
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+   background-color: #E1F6F4;
+    min-height: 200vh;          /* sirf scroll test ke liye */
+    padding-top: 70px;          /* fixed header ki height */
+  }
+
+  /* ---------- HEADER WRAP (header + panel dono isi ke andar) ---------- */
+  .header-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  /* ---------- HEADER ---------- */
+.header {
+    padding: 0 !important;
+    position: relative;
+    z-index: 2;
+    height: 70px;
+    display: flex;
+    padding: 40px 0px !important;
+    align-items: center;
+    justify-content: center;
+    background-color: #E1F6F4 !important;
+}
+
+  .brand {
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+/* ---------- PREMIUM HAMBURGER ---------- */
+/* ---------- PREMIUM HAMBURGER ---------- */
+
+.hamburger {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 70px !important;
+    height: 58px !important;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    border-radius: 50%;
+
+    transition:
+        background 0.35s ease,
+        box-shadow 0.35s ease,
+        transform 0.35s ease;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+.hamburger span {
+    display: block;
+    width: 32px !important;
+    height: 2px;
+
+    border-radius: 10px;
+    background: var(--heading);
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.25s ease,
+        background 0.3s ease;
+}
+
+.hamburger:hover {
+    box-shadow: 0 0 0 1px rgba(36, 92, 82, 0.12);
+}
+
+.hamburger:hover span {
+    background: #245C52;
+}
+
+/* Hamburger -> X animation */
+
+.menu-open .hamburger span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-open .hamburger span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.menu-open .hamburger span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Tablet & Mobile */
+
+@media (max-width: 687px) {
+    .hamburger {
+        width: 45px !important;
+        height: 45px !important;
+        left: 17px !important;
+    }
+}
+
+/* Small Mobile */
+
+@media (max-width: 400px) {
+    .hamburger {
+        width: 30px !important;
+        height: 30px !important;
+        left: 15px !important;
+    }
+}
+
+
+
+
+  /* ---------- SLIDE PANEL (top -> bottom) ---------- */
+  .menu-panel {
+    position: absolute;
+    top: 100%;                    /* header ke bilkul neeche */
+    left: 0;
+    width: 100%;                  /* poori header jitni width */
+    height: 400px;                /* 400px height */
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+   background-color: #E1F6F4 !important;
+    color: #fff;
+    z-index: 1;                   /* header ke peeche se slide hoke aayega */
+    padding: 46px 28px 28px;
+
+    transform: translateY(-100%); /* closed state: header ke peeche chhupa hua */
+    transition: transform .55s cubic-bezier(.4, 0, .2, 1),
+                box-shadow .55s ease;
+    will-change: transform;
+  }
+
+  .menu-panel.open {
+    transform: translateY(0);
+    box-shadow: 0 24px 45px rgba(0, 0, 0, .45);
+  }
+
+  /* ---------- CLOSE (X) BUTTON ---------- */
+ .close-btn {
+    position: absolute !important;
+    top: 14px !important;
+    right: 18px !important;
+
+    width: 80px !important;
+    height: 80px !important;
+
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .08);
+    color: #245C52;
+
+    font-size: 1.8rem;
+    line-height: 1;
+
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+
+    z-index: 100 !important;
+    pointer-events: auto !important;
+
+    transition: background .25s ease,
+                transform .25s ease;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+.close-btn:hover {
+    background: rgba(255, 255, 255, .2);
+    transform: rotate(90deg);
+}
+
+  /* ---------- PANEL LINKS ---------- */
+  .nav {
+    margin-top: 0 !important;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.nav a {
+    display: block;
+    padding: 13px 4px;
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    font-weight: 600;
+    color: #243D38 !important;
+    text-decoration: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity .4s ease, transform .4s ease, color .25s;
+}
+
+.menu-panel.open .nav a {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+  /* links ka stagger animation */
+  .menu-panel.open .nav a { opacity: 1; transform: translateY(0); }
+  .menu-panel.open .nav a:nth-child(1) { transition-delay: .12s; }
+  .menu-panel.open .nav a:nth-child(2) { transition-delay: .20s; }
+  .menu-panel.open .nav a:nth-child(3) { transition-delay: .28s; }
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    overflow: visible;
+}
+
+.logo img {
+    width: 99rem !important;
+    max-width: none;
+    height: 120px;
+    object-fit: contain;
+    display: block;
+}
+
+.logo-link {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo-link {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.logoo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.2vw, 3rem);
+    font-weight: 600;
+    letter-spacing: -1px;
+    color: var(--heading);
+    text-transform: none !important;
+    line-height: 1;
+   
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.logoo span {
+    font-weight: 400;
+    font-style: italic;
+    color: var(--heading-highlight);
+    text-transform: none !important;
+    transition: color 0.4s ease;
+}
+
+.logo-link:hover .logoo {
+    color: var(--highlight);
+    letter-spacing: 1.8px;
+}
+
+.logo-link:hover .logoo span {
+    color: var(--special-text);
+}
+@media (max-width: 687px) {
+  .logoo{
+    margin: 0 20px;
+  }
+}
+
+.nav a {
+    position: relative !important;
+    text-decoration: none;
+    color: var(--link);
+    transition: color 0.35s ease;
+}
+
+.nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 1px;
+    background: var(--link-hover);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s ease;
+}
+
+.nav a:hover {
+    color: var(--link-hover);
+}
+
+.nav a:hover::after {
+    transform: scaleX(1);
+}
+
+.menu-brand-seal {
+    position: absolute;
+    top: 105px;
+    right: 40px;
+    margin: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-brand-seal img {
+    width: 105px;
+    height: 105px;
+    object-fit: contain;
+}
+.menu-panel .nav {
+    position: absolute;
+    top: 220px;
+    left: 28px;
+    right: 28px;
+    margin: 0 !important;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.menu-panel .nav a {
+    display: block;
+    padding: 13px 4px;
+}
+/* ---------- MENU GRID CONTAINER ---------- */
+
+.menu-content {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  position: relative !important;
+    width: 100% !important;
+    align-items: center !important;
+    gap: 20px !important;
+
+    margin-top: 0 !important;
+}
+
+/* ---------- NAVIGATION ---------- */
+
+.menu-content .nav {
+    position: static !important;
+    margin: 0 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+}
+
+.menu-content .nav a {
+    display: block;
+    padding: 13px 4px;
+
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    font-weight: 600;
+    color: #243D38 !important;
+    text-decoration: none;
+
+    opacity: 0;
+    transform: translateY(-10px);
+
+    transition: opacity .4s ease,
+                transform .4s ease,
+                color .3s ease;
+}
+
+/* ---------- LOGO ---------- */
+
+.menu-content .menu-brand-seal {
+    position: absolute !important;
+    top: 12px !important;
+    right: 0 !important;
+    margin: 0 !important;
+    transform: none !important;
+
+}
+
+.menu-content .menu-brand-seal img {
+    width: clamp(110px, 27vw, 270px) !important;
+    height: clamp(110px, 27vw, 270px) !important;
+    object-fit: contain;
+}
+
+@media (max-width: 900px) {
+    .menu-content .menu-brand-seal {
+        top: 50% !important;
+        right: 0 !important;
+        transform: translateY(-50%) !important;
+    }
+}
+
+/* ---------- OPEN ANIMATION ---------- */
+
+.menu-panel.open .nav a {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu-panel.open .nav a:nth-child(1) {
+    transition-delay: .12s;
+}
+
+.menu-panel.open .nav a:nth-child(2) {
+    transition-delay: .20s;
+}
+
+.menu-panel.open .nav a:nth-child(3) {
+    transition-delay: .28s;
+}
+
+.menu-panel.open .nav a:nth-child(4) {
+    transition-delay: .36s;
+}
+
+.menu-panel.open .nav a:nth-child(5) {
+    transition-delay: .44s;
+}
+html {
+    scroll-behavior: auto !important;
+}
+
+
+
+.logo-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: max-content;
+}
+
+.logo-country {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+
+    margin-top: 5px;
+
+    font-family: var(--font-link);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+
+    color: var(--heading);
+}
+
+.country-dot {
+    font-size: 19px;
+    line-height: 1;
+    color: var(--heading);
+}
+</style>
+</head>
+<body>
+
+  <div class="header-wrap">
+    <!-- HEADER -->
+    <header class="header">
+      <button id="hamburger" class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="menuPanel">
+        <span></span><span></span><span></span>
+      </button>
+
+ <a href="index.html" class="logo-link">
+    <div class="logo-wrapper">
+        <h1 class="logoo">Coffee <span>With</span> Me</h1>
+
+        <div class="logo-country">
+            <span class="country-dot">•</span>
+            <span>PAKISTAN</span>
+            <span class="country-dot">•</span>
+        </div>
+    </div>
+</a>
+
+    </header>
+
+    <!-- SLIDE DOWN PANEL -->
+   <nav id="menuPanel" class="menu-panel" aria-hidden="true">
+
+    <button id="closeBtn" class="close-btn">&times;</button>
+
+    <div class="menu-content">
+
+        <!-- LEFT COLUMN -->
+        <div class="nav">
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About Us</a>
+            <a href="menu.html">Our Menu</a>
+            <a href="exp.html">Experience</a>
+       <a href="index.html#reservation">Reservations</a>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="menu-brand-seal">
+            <img src="images/logo2.png" alt="Coffee With Me Pakistan">
+        </div>
+
+    </div>
+
+</nav>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const panel     = document.getElementById('menuPanel');
+  const closeBtn  = document.getElementById('closeBtn');
+
+  let isOpen = false;
+
+  /* ---------------- CLICK SOUND (Web Audio API) ---------------- */
+  let audioCtx = null;
+
+  function getCtx() {
+    if (!audioCtx) {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      audioCtx = new AC();
+    }
+    return audioCtx;
+  }
+
+  function playClick(freq = 760, duration = 0.10, volume = 0.22) {
+    try {
+      const ctx = getCtx();
+      if (ctx.state === 'suspended') ctx.resume();   // browser policy handle
+
+      const now = ctx.currentTime;
+
+      /* 1) chhota tone blip */
+      const osc  = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'square';
+      osc.frequency.setValueAtTime(freq, now);
+      osc.frequency.exponentialRampToValueAtTime(freq * 0.55, now + duration);
+
+      gain.gain.setValueAtTime(0.0001, now);
+      gain.gain.exponentialRampToValueAtTime(volume, now + 0.006);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+      osc.connect(gain).connect(ctx.destination);
+      osc.start(now);
+      osc.stop(now + duration + 0.02);
+
+      /* 2) chhota noise "tick" (real click feel) */
+      const len = Math.floor(ctx.sampleRate * 0.03);
+      const buffer = ctx.createBuffer(1, len, ctx.sampleRate);
+      const data = buffer.getChannelData(0);
+      for (let i = 0; i < len; i++) {
+        data[i] = (Math.random() * 2 - 1) * (1 - i / len);
+      }
+      const noise = ctx.createBufferSource();
+      noise.buffer = buffer;
+
+      const bp = ctx.createBiquadFilter();
+      bp.type = 'bandpass';
+      bp.frequency.value = 2600;
+      bp.Q.value = 1.2;
+
+      const g2 = ctx.createGain();
+      g2.gain.value = volume * 0.45;
+
+      noise.connect(bp).connect(g2).connect(ctx.destination);
+      noise.start(now);
+
+    } catch (e) {
+      /* sound support na ho to chup-chaap ignore */
+    }
+  }
+
+  /* ---------------- OPEN / CLOSE ---------------- */
+  function openMenu() {
+    if (isOpen) return;
+    isOpen = true;
+    panel.classList.add('open');
+    document.body.classList.add('menu-open');
+    panel.setAttribute('aria-hidden', 'false');
+    hamburger.setAttribute('aria-expanded', 'true');
+    playClick(800, 0.10, 0.22);          // OPEN sound (thoda high pitch)
+  }
+
+  function closeMenu() {
+    if (!isOpen) return;
+    isOpen = false;
+    panel.classList.remove('open');
+    document.body.classList.remove('menu-open');
+    panel.setAttribute('aria-hidden', 'true');
+    hamburger.setAttribute('aria-expanded', 'false');
+    playClick(430, 0.11, 0.20);          // CLOSE sound (thoda low pitch)
+  }
+
+  /* ---------------- EVENTS ---------------- */
+ /* ---------------- EVENTS ---------------- */
+
+// Hamburger toggle
+hamburger.addEventListener('click', (e) => {
+    e.stopPropagation();
+
+    if (isOpen) {
+        closeMenu();
+    } else {
+        openMenu();
+    }
+});
+
+// Close button
+closeBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    closeMenu();
+});
+
+// Panel ke andar click outside detection se protect
+panel.addEventListener('click', (e) => {
+    e.stopPropagation();
+});
+
+// Header ke andar click outside detection se protect
+document.querySelector('.header').addEventListener('click', (e) => {
+    e.stopPropagation();
+});
+
+// Outside click
+document.addEventListener('click', () => {
+    if (isOpen) {
+        closeMenu();
+    }
+});
+
+// Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeMenu();
+    }
+});
+
+// Navigation links
+panel.querySelectorAll('.nav a').forEach((link) => {
+    link.addEventListener('click', closeMenu);
+});
+</script>
+</body>
+</html>

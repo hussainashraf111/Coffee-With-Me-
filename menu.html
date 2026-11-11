@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our menu</title>
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+    <style>
+           @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root {
+    /* Background & Main Text */
+    --background: #E1F6F4;
+    --text: #3A281B;
+
+    /* Headings */
+    --heading: #243D38;
+    --heading-highlight: #245C52;
+
+    /* Subheadings */
+    --subheading: #5A4537;
+
+    /* Paragraphs */
+    --paragraph: #5F625B;
+    --small-text: #7A817A;
+
+    /* Highlights */
+    --highlight: #1F7567;
+    --highlight-bg: #C5EAE4;
+
+    /* Special Text & Links */
+    --special-text: #8A5A35;
+    --link: #276B60;
+    --link-hover: #17483F;
+
+    /* Borders */
+    --border: #B8DCD5;
+
+
+        /* Main Heading — Sharp & Bold */
+    --font-heading: 'Syne', sans-serif;
+
+    /* Subheadings — Geometric & Modern */
+    --font-subheading: 'Space Grotesk', sans-serif;
+
+    /* Paragraphs — Clean & Readable */
+    --font-paragraph: 'DM Sans', sans-serif;
+
+    /* Links & Navigation */
+    --font-link: 'Space Grotesk', sans-serif;
+
+} 
+  body {
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #E1F6F4 !important;
+    color: white;
+    padding-top: 100px;
+}
+
+.main-banner {
+    width: calc(100% - 60px);
+    height: 600px;
+    overflow: hidden !important;
+    border-radius: 18px;
+   margin: 40px 30px 15px !important;
+}
+
+.main-banner img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: inherit;
+}
+
+@media (max-width: 768px) {
+    .main-banner {
+        width: calc(100% - 20px);
+        height: 350px;
+        margin: 35px 10px !important;
+        border-radius: 14px;
+    }
+}
+
+.menu-marquee {
+    width: 100%;
+    overflow: hidden;
+    padding: 22px 0;
+  background-color:transparent !important;
+    box-sizing: border-box;
+}
+
+.menu-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: menuScroll 22s linear infinite;
+    will-change: transform;
+}
+
+.menu-marquee-content {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 38px;
+    padding-right: 38px;
+    white-space: nowrap;
+}
+
+.menu-marquee-content span {
+  font-family: 'Cormorant Garamond', serif !important;
+    font-size: clamp(1rem, 2.1vw, 1.2rem) !important;
+    font-weight: 600 !important;
+  
+    color: #243D38  !important;
+}
+
+.menu-marquee-content .menu-star {
+    color: #29AFFF;
+    font-size: 24px;
+
+}
+
+@keyframes menuScroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-marquee {
+        padding: 17px 0;
+    }
+
+    .menu-marquee-content {
+        gap: 22px;
+        padding-right: 22px;
+    }
+
+    .menu-marquee-content span {
+        font-size: 14px;
+        letter-spacing: 3px;
+    }
+}
+
+.menu-coffee-icon {
+    color: #8f673a;
+    font-size: 17px;
+    margin: 0 5px;
+    filter: drop-shadow(0 0 5px rgba(198, 156, 109, 0.3));
+}
+.menu-sec{
+   
+       width: calc(100% - 40px);
+    padding: 30px 20px;
+  
+
+    margin: 50px 20px !important;
+    box-sizing: border-box;
+}
+.discover-h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4.2vw, 3.3rem);
+    font-weight: 400;
+    margin: 0 0 15px;
+    color:  #243D38 !important;
+}
+.menu-sec h4{  
+     font-family: 'DM Sans', sans-serif;
+    font-size: clamp(0.75rem, 2.9vw, 1rem);
+    font-weight: 400;
+    line-height: 1.9;
+
+    word-spacing: 1px;
+    color: #5A4537 !important;
+    margin: 5px 0 !important;
+    text-align: left;
+   
+}
+.menu-sec h5{
+  font-family: 'DM Sans', sans-serif;
+    font-size: clamp(0.7rem, 2.5vw, 0.9rem);
+font-weight: 400;
+    margin: 0 0 15px;
+    color: #245C52  !important;
+
+}
+.menu-con {
+   
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    padding: 30px;
+    border: none !important;
+    position: relative;
+    margin: 20px 0;
+}
+
+.menu-con::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 60%;
+    height: 0.8px;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(75, 54, 33, 0.45),
+        rgba(75, 54, 33, 0.65),
+        rgba(75, 54, 33, 0.45),
+        transparent
+    );
+}
+.menu-con h1{
+  font-family: sans-serif ;
+       font-size: clamp(1.3rem, 2vw, 1.5rem);
+    font-weight: 600;
+
+    color:  #243D38 !important;
+   
+
+}
+.menu1 h4{
+   font-family: 'Space Grotesk', sans-serif;
+
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    word-spacing: 1px;
+    color:#245C52   !important;
+    margin: 0 0 11px !important;
+    text-align: left;
+       font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+}
+
+.menu1 h1.breakfast-name1 {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: clamp(1.3rem, 3.7vw, 1.6rem) !important;
+    font-weight: 600 !important;
+  
+    color: #243D38  !important;
+}
+.breakfast-name1 {
+    position: relative;
+}
+
+.breakfast-name1::before {
+    content: "•";
+    position: absolute;
+    left: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #245C52;
+    font-size: 30px;
+}
+@media (max-width: 1200px) {
+    .breakfast-name1::before {
+        left: -18px;
+    }
+}
+.breakfast-par1{
+        font-family: 'DM Sans', sans-serif;
+    font-size: clamp(0.7rem, 2.5vw, 0.8rem);
+    font-weight: 500;
+    line-height: 1.9;
+    letter-spacing: 0.5px;
+    word-spacing: 1px;
+    color: #5A4537 !important;
+    margin: 5px 0 !important;
+    text-align: left;
+}
+.breakfast-des1{
+
+
+          font-family: 'DM Sans', sans-serif;
+    font-size: clamp(0.8rem, 2.9vw, 0.9rem);
+    font-weight: 400;
+    line-height: 1.9;
+    letter-spacing: -0.3px !important; 
+    word-spacing: 1px;
+        color:#245C52   !important;
+    margin: 0 0 11px !important;
+    text-align: left;
+}
+.menu1img {
+    width: 65%;
+    aspect-ratio: 400 / 450;
+    overflow: hidden;
+    border-radius: 5px;
+    margin: 20px 0 16px auto;
+    display: block;
+    border-radius: 20px;
+}
+
+.menu1img img{
+       display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+@media (max-width: 1023px) {
+    .menu-sec{
+   
+        padding: 20px 0;
+    .menu1img {
+        display: none !important;
+    }
+
+    .menu-con {
+        padding: 10px 3px !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .menu1 {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+    }
+}
+
+}
+.img-con {
+    display: none;
+}
+.img-con img { 
+    display: none
+    ;
+}
+@media (max-width: 1023px) {
+.img-con {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto !important;
+    padding: 15px 0;
+
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.img-con img {
+    display: block;
+
+    width: 400px !important;
+    max-width: 85%;
+    height: 500px !important;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 20px !important;
+    border: 1px solid rgba(90, 60, 40, 0.15);
+
+    box-shadow:
+        0 12px 30px rgba(45, 29, 18, 0.10),
+        0 3px 8px rgba(45, 29, 18, 0.06);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+/* Image 1 — Left */
+.img-con img:nth-child(1) {
+    align-self: center;
+}
+
+/* Image 2 — Center, slightly left */
+.img-con img:nth-child(2) {
+    align-self: center;
+    transform: translateX(-33px);
+}
+
+/* Image 3 — Right */
+.img-con img:nth-child(3) {
+    align-self: flex-end;
+    transform: translateX(-10px);
+}
+
+/* Premium hover effect */
+.img-con img:hover {
+    box-shadow: 0 20px 45px rgba(45, 29, 18, 0.18);
+}
+}
+/* Mobile responsive */
+@media (max-width: 500px) {
+    .img-con {
+        width: 100%;
+        max-width: 100%;
+        gap: 22px;
+        padding: 10px 12px;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    .img-con img {
+        width: 280px !important;
+        max-width: 100%;
+        height: 400px !important;
+        border-radius: 16px !important;
+
+        align-self: center !important;
+        transform: none !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------- PREMIUM MENU WELCOME ---------- */
+
+.menu-welcome {
+    position: fixed;
+    top: 25px;
+    left: 50%;
+    transform: translate(-50%, -150%);
+
+    width: min(570px, calc(100% - 40px));
+
+    display: flex;
+    align-items: center;
+    gap: 17px;
+
+    padding: 19px 24px;
+
+    background: #F8FCF9;
+
+    border: 1px solid var(--border);
+    border-radius: 15px;
+
+    box-shadow:
+        0 12px 35px rgba(36, 61, 56, 0.12),
+        0 3px 10px rgba(36, 61, 56, 0.05);
+
+    z-index: 99999;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.5s ease,
+        visibility 0.5s ease;
+}
+
+/* SHOW */
+
+.menu-welcome.show {
+    transform: translate(-50%, 0);
+
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ICON */
+
+.menu-welcome-icon {
+    flex-shrink: 0;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--highlight-bg);
+    color: var(--heading-highlight);
+
+    border-radius: 50%;
+
+    font-size: 21px;
+}
+
+/* CONTENT */
+
+.menu-welcome-content {
+    min-width: 0;
+}
+
+.menu-welcome-label {
+     font-family: 'DM Sans', sans-serif;
+    font-size: clamp(0.7rem, 2vw, 0.9rem) !important;
+    font-weight: 400;
+    line-height: 1.9;
+    letter-spacing: -0.3px;
+    word-spacing: 1px;
+    color: #5F625B!important;
+
+    text-align: left;
+
+    margin-bottom: 5px;
+}
+
+.menu-welcome-content h3 {
+  font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 3vw, 1.6rem);
+    font-weight: 600;
+    margin: 0 0 15px;
+    color:  #243D38 !important;
+
+    margin: 0 0 5px;
+}
+
+.menu-welcome-content p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(0.7rem, 2vw, 0.9rem) !important;
+    font-weight: 400;
+    line-height: 1.9;
+    letter-spacing: -0.3px;
+    word-spacing: 1px;
+    color: #5F625B!important;
+
+    text-align: left;
+
+    margin: 0;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 600px) {
+
+    .menu-welcome {
+        top: 15px;
+
+        width: calc(100% - 30px);
+
+        padding: 15px 16px;
+
+        gap: 12px;
+
+        border-radius: 13px;
+    }
+
+    .menu-welcome-icon {
+        width: 42px;
+        height: 42px;
+
+        font-size: 18px;
+    }
+
+    .menu-welcome-content h3 {
+        font-size: 16px;
+    }
+
+    .menu-welcome-content p {
+        font-size: 11px;
+    }
+
+    .menu-welcome-label {
+        font-size: 8px;
+        letter-spacing: 1.4px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="menu-welcome" id="menuWelcome">
+    <div class="menu-welcome-icon">
+        <i class="fa-solid fa-mug-hot"></i>
+    </div>
+
+    <div class="menu-welcome-content">
+        <span class="menu-welcome-label">
+            COFFEE WITH ME · PAKISTAN
+        </span>
+
+        <h3>A Taste of Something Special</h3>
+
+        <p>
+            Discover our menu, thoughtfully crafted for every moment.
+        </p>
+    </div>
+</div>
+    
+    
+   <div id="header"></div>
+
+<script>
+    fetch("header.html")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("header.html load nahi hui");
+            }
+            return response.text();
+        })
+        .then(html => {
+
+            document.getElementById("header").innerHTML = html;
+
+            const hamburger = document.getElementById("hamburger");
+            const panel = document.getElementById("menuPanel");
+            const closeBtn = document.getElementById("closeBtn");
+
+            if (!hamburger || !panel || !closeBtn) {
+                console.error("Header ke required elements nahi mile.");
+                return;
+            }
+
+            let isOpen = false;
+            let audioCtx = null;
+            let scrollAnimation = null;
+            let scrollTimeout = null;
+
+            // ---------- CLICK SOUND ----------
+
+            function playClick(freq) {
+                try {
+                    const AudioContextClass =
+                        window.AudioContext ||
+                        window.webkitAudioContext;
+
+                    if (!AudioContextClass) return;
+
+                    if (!audioCtx) {
+                        audioCtx = new AudioContextClass();
+                    }
+
+                    const playSound = () => {
+                        const now = audioCtx.currentTime;
+                        const oscillator = audioCtx.createOscillator();
+                        const gain = audioCtx.createGain();
+
+                        oscillator.type = "sine";
+                        oscillator.frequency.setValueAtTime(freq, now);
+
+                        oscillator.frequency.exponentialRampToValueAtTime(
+                            freq * 0.6,
+                            now + 0.09
+                        );
+
+                        gain.gain.setValueAtTime(0.0001, now);
+                        gain.gain.exponentialRampToValueAtTime(
+                            0.12,
+                            now + 0.008
+                        );
+
+                        gain.gain.exponentialRampToValueAtTime(
+                            0.0001,
+                            now + 0.10
+                        );
+
+                        oscillator.connect(gain);
+                        gain.connect(audioCtx.destination);
+
+                        oscillator.start(now);
+                        oscillator.stop(now + 0.11);
+                    };
+
+                    if (audioCtx.state === "suspended") {
+                        audioCtx.resume()
+                            .then(playSound)
+                            .catch(console.error);
+                    } else {
+                        playSound();
+                    }
+
+                } catch (error) {
+                    console.error("Sound error:", error);
+                }
+            }
+
+            // ---------- OPEN MENU ----------
+
+            function openMenu() {
+                if (isOpen) return;
+
+                isOpen = true;
+
+                panel.classList.add("open");
+                document.body.classList.add("menu-open");
+
+                panel.setAttribute("aria-hidden", "false");
+                hamburger.setAttribute("aria-expanded", "true");
+
+                playClick(800);
+            }
+
+            // ---------- CLOSE MENU ----------
+
+            function closeMenu() {
+                if (!isOpen) return;
+
+                isOpen = false;
+
+                panel.classList.remove("open");
+                document.body.classList.remove("menu-open");
+
+                panel.setAttribute("aria-hidden", "true");
+                hamburger.setAttribute("aria-expanded", "false");
+
+                playClick(430);
+            }
+
+            // ---------- HAMBURGER EVENTS ----------
+
+            hamburger.addEventListener("click", (e) => {
+                e.stopPropagation();
+
+                if (isOpen) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+
+            // ---------- CLOSE BUTTON ----------
+
+            closeBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                closeMenu();
+            });
+
+            // ---------- CLOSE ON OUTSIDE CLICK ----------
+
+            document.addEventListener("pointerdown", (e) => {
+
+                if (!isOpen) return;
+
+                const clickedInsidePanel = panel.contains(e.target);
+                const clickedHamburger = hamburger.contains(e.target);
+
+                if (!clickedInsidePanel && !clickedHamburger) {
+                    closeMenu();
+                }
+
+            });
+
+            // ---------- ESCAPE KEY ----------
+
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "Escape") {
+                    closeMenu();
+                }
+            });
+
+            // ---------- BUTTERY SMOOTH SCROLL ----------
+
+            panel.querySelectorAll(".nav a").forEach(link => {
+
+                link.addEventListener("click", function(e) {
+
+                    const href = this.getAttribute("href");
+
+                    if (!href) return;
+
+                    const url = new URL(href, window.location.href);
+
+                    // Hash check
+                    if (!url.hash) {
+                        closeMenu();
+                        return;
+                    }
+
+                    // Same-page check
+                    const samePage =
+                        url.origin === window.location.origin &&
+                        url.pathname === window.location.pathname;
+
+                    // Different page: normal navigation
+                    if (!samePage) {
+                        closeMenu();
+                        return;
+                    }
+
+                    const target = document.querySelector(
+                        decodeURIComponent(url.hash)
+                    );
+
+                    if (!target) {
+                        closeMenu();
+                        return;
+                    }
+
+                    e.preventDefault();
+
+                    // Stop previous scroll
+                    if (scrollAnimation) {
+                        cancelAnimationFrame(scrollAnimation);
+                        scrollAnimation = null;
+                    }
+
+                    if (scrollTimeout) {
+                        clearTimeout(scrollTimeout);
+                        scrollTimeout = null;
+                    }
+
+                    // Close menu
+                    closeMenu();
+
+                    // Wait for menu closing animation
+                    scrollTimeout = setTimeout(() => {
+
+                        const headerOffset = 90;
+
+                        const targetPosition =
+                            target.getBoundingClientRect().top +
+                            window.scrollY -
+                            headerOffset;
+
+                        const startPosition = window.scrollY;
+                        const distance = targetPosition - startPosition;
+
+                        const duration = 750;
+
+                        let startTime = null;
+
+                        function smoothScroll(currentTime) {
+
+                            if (!startTime) {
+                                startTime = currentTime;
+                            }
+
+                            const elapsed = currentTime - startTime;
+
+                            const progress = Math.min(
+                                elapsed / duration,
+                                1
+                            );
+
+                            // Smooth ease-in-out
+                            const ease = progress < 0.5
+                                ? 4 * progress * progress * progress
+                                : 1 - Math.pow(
+                                    -2 * progress + 2,
+                                    3
+                                ) / 2;
+
+                            window.scrollTo(
+                                0,
+                                startPosition + distance * ease
+                            );
+
+                            if (progress < 1) {
+                                scrollAnimation =
+                                    requestAnimationFrame(smoothScroll);
+                            } else {
+                                scrollAnimation = null;
+                            }
+                        }
+
+                        scrollAnimation =
+                            requestAnimationFrame(smoothScroll);
+
+                    }, 350);
+
+                });
+
+            });
+
+        })
+        .catch(error => console.error("Header error:", error));
+</script>
+
+
+
+
+<div class="main-banner">
+    <img src="images/bannner2.png"></div>
+    
+<div class="menu-marquee" id="menuu">
+    <div class="menu-marquee-track">
+        <div class="menu-marquee-content">
+            <span>OUR MENU</span>
+           
+<i class="fa-solid fa-mug-hot menu-coffee-icon"></i>
+
+            <span>CRAFTED WITH LOVE</span>
+         
+<i class="fa-solid fa-mug-hot menu-coffee-icon"></i>
+
+            <span>EXPLORE OUR MENU</span>
+         
+<i class="fa-solid fa-mug-hot menu-coffee-icon"></i>
+
+        </div>
+
+        <div class="menu-marquee-content" aria-hidden="true">
+            <span>OUR MENU</span>
+         
+<i class="fa-solid fa-mug-hot menu-coffee-icon"></i>
+
+            <span>CRAFTED WITH LOVE</span>
+         
+<i class="fa-solid fa-mug-hot menu-coffee-icon"></i>
+
+            <span>EXPLORE OUR MENU</span>
+         
+<i class="fa-solid fa-mug-hot menu-coffee-icon"></i>
+
+        </div>
+        <div class="menu-marquee-content" aria-hidden="true">
+            <span>OUR MENU</span>
+         
+<i class="fa-solid fa-mug-hot menu-coffee-icon"></i>
+
+            <span>CRAFTED WITH LOVE</span>
+         
+<i class="fa-solid fa-mug-hot menu-coffee-icon"></i>
+
+            <span>EXPLORE OUR MENU</span>
+         
+<i class="fa-solid fa-mug-hot menu-coffee-icon"></i>
+
+        </div>
+    </div>
+</div>
+
+<section class="menu-sec" >
+    <h4 >A TASTE OF PERFECTION</h4>
+    <h1 class="discover-h1 ">
+        Discover Our Menu
+    </h1>
+    <h5>Every cup, every bite — crafted to make your day special.</h5>
+
+    <div class="menu-con">
+        <div class="menu1">
+            <h1>Morning Delights</h1>
+            <div class="h4-con">
+            <h4>Start your morning with something delicious.</h4>
+</div>
+            <h1 class="breakfast-name1">Golden Pancake Stack</h1>
+            <p class="breakfast-par1">Sweet morning indulgence</p>
+            <p class="breakfast-des1">Soft, fluffy pancakes drizzled with maple syrup and topped with fresh seasonal berries for a delightful breakfast treat.</p>
+
+             <h1 class="breakfast-name1">Avocado Sunrise Toast</h1>
+            <p class="breakfast-par1">Fresh, light and delicious</p>
+           
+            <p class="breakfast-des1">Crispy sourdough topped with creamy smashed avocado, perfectly poached eggs, and fresh herbs for a wholesome morning meal.</p>
+        
+
+            <h1 class="breakfast-name1">Classic English Breakfast</h1>
+            <p class="breakfast-par1">A hearty morning favorite</p>
+           
+            <p class="breakfast-des1">Fluffy scrambled eggs, golden toasted bread, grilled tomatoes, and savory baked beans served fresh for a satisfying start to your day.</p>
+        
+        </div>
+        <div class="menu1img"> <img src="images/menuimg11.jpeg"></div>
+    </div>
+
+
+    <div class="menu-con">
+        <div class="menu1">
+          <h1>Fresh & Fruity</h1>
+            <div class="h4-con">
+<h4>Refresh your senses with every sip.</h4>
+</div>
+           <h1 class="breakfast-name1">Strawberry Bliss</h1>
+            <p class="breakfast-par1">Sweet & Fruity</p>
+            <p class="breakfast-des1">A delicious blend of ripe strawberries with a naturally sweet, fruity taste, served chilled for a delightful refreshment.</p>
+
+             <h1 class="breakfast-name1">Sunrise Orange Juice</h1>
+            <p class="breakfast-par1">Fresh & Refreshing</p>
+           
+            <p class="breakfast-des1">Freshly squeezed oranges bursting with natural sweetness and citrus flavor, served chilled for a refreshing start to your day.</p>
+        
+
+            <h1 class="breakfast-name1">Ruby Pomegranate Juice</h1>
+            <p class="breakfast-par1">Sweet & Tangy</p>
+           
+            <p class="breakfast-des1">Fresh pomegranate seeds blended into a vibrant, refreshing juice with a naturally sweet-tart flavor for a perfectly refreshing experience.</p>
+        
+        </div>
+        <div class="menu1img"> <img src="images/menuimg22.jpg"></div>
+    </div>
+
+
+    <div class="menu-con">
+        <div class="menu1">
+          <h1>Fresh & Fruity</h1>
+            <div class="h4-con">
+<h4>Refresh your senses with every sip.</h4>
+</div>
+            <h1 class="breakfast-name1">Classic Cappuccino</h1>
+            <p class="breakfast-par1">Rich & Velvety</p>
+            <p class="breakfast-des1"> A perfect blend of bold espresso, steamed milk, and silky foam, crafted for a smooth and comforting coffee experience.</p>
+
+
+             <h1 class="breakfast-name1">Iced Caramel Latte</h1>
+            <p class="breakfast-par1">Smooth & Indulgent</p>
+           
+            <p class="breakfast-des1"> Chilled espresso blended with creamy milk and sweet caramel, served over ice for a deliciously refreshing treat.</p>
+        
+
+
+            <h1 class="breakfast-name1">English Breakfast Tea</h1>
+            <p class="breakfast-par1">Classic & Refined</p>
+           
+            <p class="breakfast-des1">A full-bodied black tea with a rich aroma and smooth finish, perfect for a peaceful morning or afternoon break.</p>
+        
+        </div>
+        <div class="menu1img"> <img src="images/menuimg3.jpg"></div>
+    </div>
+</section>
+
+<div class="img-con">
+
+    <img src="images/menuimg11.jpeg" alt="Cafe Image 1">
+
+    <img src="images/menuimg22.jpg" alt="Cafe Image 2">
+
+    <img src="images/menuimg3.jpg" alt="Cafe Image 3">
+
+</div>
+
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const welcome = document.getElementById("menuWelcome");
+
+    if (!welcome) return;
+
+    // Show welcome message
+    setTimeout(() => {
+        welcome.classList.add("show");
+    }, 300);
+
+    // Hide after 3 seconds
+    setTimeout(() => {
+        welcome.classList.remove("show");
+    }, 3500);
+
+});
+
+    </script>
+<div id="footer"></div>
+
+<script>
+    fetch("footer.html")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("footer.html load nahi hui");
+            }
+            return response.text();
+        })
+        .then(html => {
+            document.getElementById("footer").innerHTML = html;
+
+            // NEWSLETTER FUNCTIONALITY
+            const newsletterForm = document.getElementById("newsletterForm");
+            const newsletterEmail = document.getElementById("newsletterEmail");
+            const newsletterMessage = document.getElementById("newsletterMessage");
+
+            if (newsletterForm && newsletterEmail && newsletterMessage) {
+
+                let messageTimer;
+
+                newsletterForm.addEventListener("submit", function(e) {
+                    e.preventDefault();
+
+                    if (!newsletterEmail.checkValidity()) {
+                        newsletterEmail.reportValidity();
+                        return;
+                    }
+
+                    clearTimeout(messageTimer);
+
+                    newsletterMessage.classList.add("show");
+
+                    newsletterEmail.value = "";
+
+                    messageTimer = setTimeout(() => {
+                        newsletterMessage.classList.remove("show");
+                    }, 4000);
+                });
+            }
+        })
+        .catch(error => console.error("Footer error:", error));
+</script>
+</body>
+</html>
